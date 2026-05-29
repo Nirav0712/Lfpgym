@@ -46,7 +46,7 @@ export default function Header() {
               <img
                 src="/logo.png"
                 alt="logo"
-                className="h-14 object-contain cursor-pointer"
+                className="h-16 md:h-20 object-contain cursor-pointer"
               />
             </Link>
           </div>
@@ -60,33 +60,37 @@ export default function Header() {
 
             {/* ACTIVITIES DROPDOWN */}
             <div
-              className="relative"
+              className="relative py-2"
               onMouseEnter={() => setOpen(true)}
               onMouseLeave={() => setOpen(false)}
             >
               <button className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors">
                 Activities
-                <ChevronDownIcon />
+                <ChevronDownIcon className={`w-4 h-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
               </button>
 
-              {open && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-black border border-zinc-800 shadow-2xl">
-
+              <div
+                className={`absolute top-full left-0 pt-3 w-64 transition-all duration-300 ease-out ${
+                  open
+                    ? "opacity-100 translate-y-0 pointer-events-auto visible"
+                    : "opacity-0 translate-y-2 pointer-events-none invisible"
+                }`}
+              >
+                <div className="bg-black border border-zinc-800 shadow-2xl rounded-lg overflow-hidden">
                   {activities.map((item, index) => {
                     const routePath = "/" + item.toLowerCase().replace(" ", "-");
                     return (
                       <Link
                         key={index}
                         href={routePath}
-                        className="block px-5 py-4 border-b border-zinc-800 hover:bg-zinc-900 hover:text-yellow-400 transition-colors"
+                        className="block px-5 py-4 border-b border-zinc-800 last:border-b-0 hover:bg-zinc-900 hover:text-yellow-400 transition-colors"
                       >
                         {item}
                       </Link>
                     );
                   })}
-
                 </div>
-              )}
+              </div>
             </div>
 
             <Link href="/pricing" className="hover:text-yellow-400 transition-colors">Pricing</Link>

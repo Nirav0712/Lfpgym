@@ -1,5 +1,60 @@
 "use client";
 
+const plans = [
+    {
+        title: "1 Months Plan",
+        subtitle: "Perfect for Starters",
+        price: "5000",
+        duration: "/1 months",
+        benefits: [
+            "Unlimited gym access & equipment use.",
+            "Access to all group fitness classes.",
+            "Free locker & shower usage.",
+            "Monthly body composition tracking.",
+            "10% discount on personal training.",
+        ],
+    },
+    {
+        title: "3 Months Plan",
+        subtitle: "Commit to Your Fitness",
+        price: "8000",
+        duration: "/3 months",
+        benefits: [
+            "Unlimited gym access & equipment use.",
+            "Access to all group fitness classes.",
+            "Free locker & shower usage.",
+            "Monthly body composition tracking.",
+            "15% off on personal training sessions.",
+        ],
+    },
+    {
+        title: "6 Months Plan",
+        subtitle: "Best Value Package",
+        price: "12000",
+        duration: "/6 month",
+        benefits: [
+            "Unlimited gym access & equipment use.",
+            "Access to all group fitness classes.",
+            "Free locker & shower usage.",
+            "Monthly body composition tracking.",
+            "25% off on personal training sessions.",
+        ],
+    },
+    {
+        title: "12 Months Plan",
+        subtitle: "Best Value Package",
+        price: "20000",
+        duration: "/12 month",
+        benefits: [
+            "Unlimited gym access & equipment use.",
+            "Access to all group fitness classes.",
+            "Free locker & shower usage.",
+            "Monthly body composition tracking.",
+            "25% off on personal training sessions.",
+        ],
+    },
+];
+
 export default function JoinForm() {
     return (
         <section className="bg-black py-24 min-h-screen">
@@ -151,161 +206,60 @@ export default function JoinForm() {
 
                 </div>
             </div>
-            <section className="bg-black py-24">
-                <div className="max-w-7xl mx-auto px-5">
-
-                    {/* Heading */}
-                    <div className="text-center mb-16">
-                        <p className="text-[#F5E609] text-sm font-semibold mb-4">
-                            Pricing Plans
-                        </p>
-
-                        <h2 className="text-white text-4xl md:text-6xl font-bold leading-tight">
-                            Choose the Perfect Plan
-                            <br />
-                            That Truly Fits You
-                        </h2>
-
-                        <p className="text-gray-400 max-w-2xl mx-auto mt-6 text-lg">
-                            Flexible membership options for every lifestyle, from single sessions
-                            to full packages with world-class facilities.
-                        </p>
-                    </div>
-
-                    {/* Pricing Cards */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                        {/* Card 1 */}
-                        <div className="relative bg-[#050505] p-8 overflow-hidden">
-                            <div className="absolute bottom-0 left-0 w-full h-32 bg-[#F5E609]/20 blur-3xl"></div>
-
-                            <h3 className="text-white text-4xl font-bold">
-                                3 Months Plan
-                            </h3>
-
-                            <p className="text-gray-400 mt-2">
-                                Perfect for Starters
-                            </p>
-
-                            <div className="flex items-end gap-2 mt-10">
-                                <span className="text-[#F5E609] text-6xl font-bold">
-                                    4000
-                                </span>
-                                <span className="text-[#F5E609] font-semibold mb-2">
-                                    /1 month
-                                </span>
-                            </div>
-
-                            <h4 className="text-white font-bold mt-12 mb-6">
-                                Benefits:
-                            </h4>
-
-                            <ul className="space-y-3 text-gray-300">
-                                <li>✔ Unlimited gym access & equipment use.</li>
-                                <li>✔ Access to all group fitness classes.</li>
-                                <li>✔ Free locker & shower usage.</li>
-                                <li>✔ Monthly body composition tracking.</li>
-                                <li>✔ 10% discount on personal training.</li>
-                            </ul>
-                        </div>
-
-                        {/* Card 2 */}
-                        <div className="relative bg-[#050505] p-8 overflow-hidden">
-                            <div className="absolute bottom-0 left-0 w-full h-32 bg-[#F5E609]/20 blur-3xl"></div>
-
-                            <h3 className="text-white text-4xl font-bold">
-                                6 Months Plan
-                            </h3>
-
-                            <p className="text-gray-400 mt-2">
-                                Commit to Your Fitness
-                            </p>
-
-                            <div className="flex items-end gap-2 mt-10">
-                                <span className="text-[#F5E609] text-6xl font-bold">
-                                    8000
-                                </span>
-                                <span className="text-[#F5E609] font-semibold mb-2">
-                                    /3 month
-                                </span>
-                            </div>
-
-                            <h4 className="text-white font-bold mt-12 mb-6">
-                                Benefits:
-                            </h4>
-
-                            <ul className="space-y-3 text-gray-300">
-                                <li>✔ Unlimited gym access & equipment use.</li>
-                                <li>✔ Access to all group fitness classes.</li>
-                                <li>✔ Free locker & shower usage.</li>
-                                <li>✔ Monthly body composition tracking.</li>
-                                <li>✔ 15% off on personal training sessions.</li>
-                            </ul>
-                        </div>
-
-                        {/* Card 3 */}
-                        <div className="relative bg-[#050505] p-8 overflow-hidden">
-                            <div className="absolute bottom-0 left-0 w-full h-32 bg-[#F5E609]/20 blur-3xl"></div>
-
-                            <h3 className="text-white text-4xl font-bold">
-                                12 Months Plan
-                            </h3>
-
-                            <p className="text-gray-400 mt-2">
-                                Best Value Package
-                            </p>
-
-                            <div className="flex items-end gap-2 mt-10">
-                                <span className="text-[#F5E609] text-6xl font-bold">
-                                    12000
-                                </span>
-                                <span className="text-[#F5E609] font-semibold mb-2">
-                                    /6 month
-                                </span>
-                            </div>
-
-                            <h4 className="text-white font-bold mt-12 mb-6">
-                                Benefits:
-                            </h4>
-
-                            <ul className="space-y-3 text-gray-300">
-                                <li>✔ Unlimited gym access & equipment use.</li>
-                                <li>✔ Access to all group fitness classes.</li>
-                                <li>✔ Free locker & shower usage.</li>
-                                <li>✔ Monthly body composition tracking.</li>
-                                <li>✔ 25% off on personal training sessions.</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-                <section className="bg-black overflow-hidden py-8">
-                    <div className="flex w-max animate-marquee">
-                        {[...Array(6)].map((_, index) => (
-                            <h2
+            <section className="bg-black py-20">
+                <div className="max-w-screen-2xl mx-auto px-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+                        {plans.map((plan, index) => (
+                            <div
                                 key={index}
-                                className="mx-16 text-4xl md:text-7xl font-bold text-[#F5E609] whitespace-nowrap"
+                                className="relative border border-neutral-800 bg-black overflow-hidden flex flex-col h-full"
                             >
-                                Ready to take the first step towards your fitness goals?
-                            </h2>
+                                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-yellow-500/10" />
+
+                                <div className="relative z-10 p-8 flex flex-col h-full flex-grow justify-between">
+                                    <div>
+                                        <h3 className="text-white text-2xl font-bold mb-2">
+                                            {plan.title}
+                                        </h3>
+
+                                        <p className="text-white mb-8">
+                                            {plan.subtitle}
+                                        </p>
+
+                                        <div className="flex items-end mb-10">
+                                            <span className="text-yellow-400 text-5xl font-extrabold">
+                                                {plan.price}
+                                            </span>
+                                            <span className="text-yellow-400 text-xl font-bold ml-2">
+                                                {plan.duration}
+                                            </span>
+                                        </div>
+
+                                        <h4 className="text-white text-2xl font-bold mb-6">
+                                            Benefits:
+                                        </h4>
+
+                                        <ul className="space-y-4 flex-grow mb-8">
+                                            {plan.benefits.map((item, i) => (
+                                                <li key={i} className="flex text-white">
+                                                    <span className="text-yellow-400 mr-3">✓</span>
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+
+                                    <a
+                                        href="/contact"
+                                        className="border border-yellow-400 text-white font-bold text-center py-4 hover:bg-yellow-400 hover:text-black transition-all duration-300 block"
+                                    >
+                                        JOIN NOW
+                                    </a>
+                                </div>
+                            </div>
                         ))}
                     </div>
-
-                    <style jsx>{`
-    .animate-marquee {
-      animation: marquee 50s linear infinite;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-  `}</style>
-                </section>
+                </div>
             </section>
         </section>
     );

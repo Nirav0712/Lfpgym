@@ -1,107 +1,116 @@
 "use client";
 
-import { Check } from "lucide-react";
+import Link from "next/link";
 
-export default function PricingPlans() {
+export default function PricingSection() {
     const plans = [
         {
-            title: "1 Month Plan",
-            subtitle: "Perfect for Beginners",
-            price: "4000/-",
-            duration: "/1 month",
+            title: "1 Months Plan",
+            subtitle: "Perfect for Starters",
+            price: "5000",
+            duration: "/1 months",
+            benefits: [
+                "Unlimited gym access & equipment use.",
+                "Access to all group fitness classes.",
+                "Free locker & shower usage.",
+                "Monthly body composition tracking.",
+                "10% discount on personal training.",
+            ],
         },
         {
             title: "3 Months Plan",
-            subtitle: "Most Popular",
-            price: "8000/-",
+            subtitle: "Commit to Your Fitness",
+            price: "8000",
             duration: "/3 months",
+            benefits: [
+                "Unlimited gym access & equipment use.",
+                "Access to all group fitness classes.",
+                "Free locker & shower usage.",
+                "Monthly body composition tracking.",
+                "15% off on personal training sessions.",
+            ],
         },
         {
             title: "6 Months Plan",
-            subtitle: "Best Value",
-            price: "12000/-",
-            duration: "/6 months",
+            subtitle: "Best Value Package",
+            price: "12000",
+            duration: "/6 month",
+            benefits: [
+                "Unlimited gym access & equipment use.",
+                "Access to all group fitness classes.",
+                "Free locker & shower usage.",
+                "Monthly body composition tracking.",
+                "25% off on personal training sessions.",
+            ],
+        },
+        {
+            title: "12 Months Plan",
+            subtitle: "Best Value Package",
+            price: "20000",
+            duration: "/12 month",
+            benefits: [
+                "Unlimited gym access & equipment use.",
+                "Access to all group fitness classes.",
+                "Free locker & shower usage.",
+                "Monthly body composition tracking.",
+                "25% off on personal training sessions.",
+            ],
         },
     ];
 
     return (
-        <section className="bg-black text-white py-24">
-            <div className="max-w-[1400px] mx-auto px-6">
-                <div className="text-center mb-16">
-                    <p className="text-[#FFD000] font-semibold text-lg mb-3">
-                        Pricing Plans
-                    </p>
-
-                    <h2 className="text-5xl lg:text-7xl font-bold leading-tight">
-                        Choose the Perfect Plan
-                        <br />
-                        That Truly Fits You
-                    </h2>
-                </div>
-
-                <div className="grid lg:grid-cols-3 gap-8">
+        <section className="bg-black py-24">
+            <div className="max-w-[1600px] mx-auto px-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
                     {plans.map((plan, index) => (
                         <div
                             key={index}
-                            className="relative bg-[#050505] border border-[#111] overflow-hidden min-h-[560px]"
+                            className="border border-neutral-800 bg-black relative overflow-hidden"
                         >
-                            <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#FFD000]/20 to-transparent" />
+                            {/* Yellow Glow */}
+                            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-yellow-500/10" />
 
-                            <div className="relative z-10 p-10">
-                                <h3 className="text-5xl font-bold mb-2">
+                            <div className="relative z-10 p-8 flex flex-col h-full">
+                                <h3 className="text-white text-[28px] font-bold mb-2">
                                     {plan.title}
                                 </h3>
 
-                                <p className="text-gray-400 text-xl mb-12">
+                                <p className="text-white text-lg mb-10">
                                     {plan.subtitle}
                                 </p>
 
-                                <div className="flex items-end gap-3 mb-16">
-                                    <span className="text-[#FFD000] text-7xl font-bold">
+                                <div className="flex items-end mb-12">
+                                    <span className="text-yellow-400 text-6xl font-extrabold">
                                         {plan.price}
                                     </span>
-
-                                    <span className="text-[#FFD000] text-3xl font-semibold mb-2">
+                                    <span className="text-yellow-400 text-2xl font-bold ml-2">
                                         {plan.duration}
                                     </span>
                                 </div>
 
-                                <h4 className="text-3xl font-bold mb-8">
+                                <h4 className="text-white text-3xl font-bold mb-6">
                                     Benefits:
                                 </h4>
 
-                                <div className="space-y-5">
-                                    <div className="flex gap-4">
-                                        <Check
-                                            size={22}
-                                            className="text-[#FFD000] mt-1"
-                                        />
-                                        <p className="text-xl text-gray-300">
-                                            Access to gym facilities during working hours
-                                        </p>
-                                    </div>
+                                <ul className="space-y-5 flex-grow">
+                                    {plan.benefits.map((item, i) => (
+                                        <li
+                                            key={i}
+                                            className="flex items-start text-white text-lg"
+                                        >
+                                            <span className="text-yellow-400 mr-3 text-xl">✓</span>
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
 
-                                    <div className="flex gap-4">
-                                        <Check
-                                            size={22}
-                                            className="text-[#FFD000] mt-1"
-                                        />
-                                        <p className="text-xl text-gray-300">
-                                            Use of cardio & strength equipment
-                                        </p>
-                                    </div>
-
-                                    <div className="flex gap-4">
-                                        <Check
-                                            size={22}
-                                            className="text-[#FFD000] mt-1"
-                                        />
-                                        <p className="text-xl text-gray-300">
-                                            Access to locker & changing rooms
-                                        </p>
-                                    </div>
-                                </div>
-
+                                {/* JOIN NOW BUTTON ENABLED */}
+                                <Link
+                                    href="/contact"
+                                    className="mt-10 border border-yellow-400 text-white font-bold text-center py-4 transition-all duration-300 hover:bg-yellow-400 hover:text-black"
+                                >
+                                    JOIN NOW
+                                </Link>
                             </div>
                         </div>
                     ))}

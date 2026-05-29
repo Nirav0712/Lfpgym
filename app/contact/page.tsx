@@ -137,7 +137,7 @@ export default function ContactPage() {
 
         </div>
       </div>
-      <section className="bg-black overflow-hidden py-8">
+      <section className="bg-black overflow-hidden py-8 mt-24">
         <div className="flex w-max animate-marquee">
           {[...Array(6)].map((_, index) => (
             <h2

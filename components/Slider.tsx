@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function RunningText() {
     return (
         <>
-            <section className="bg-black overflow-hidden py-8">
+            <section className="bg-black overflow-hidden pt-24 pb-8">
                 <div className="flex w-max animate-marquee">
                     {[...Array(6)].map((_, index) => (
                         <h2
@@ -17,20 +17,23 @@ export default function RunningText() {
                 </div>
             </section>
 
-            <style jsx>{`
-        .animate-marquee {
-          animation: marquee 50s linear infinite;
-        }
-
-        @keyframes marquee {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
+            <style
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    .animate-marquee {
+                      animation: marquee 50s linear infinite;
+                    }
+                    @keyframes marquee {
+                      0% {
+                        transform: translateX(0%);
+                      }
+                      100% {
+                        transform: translateX(-50%);
+                      }
+                    }
+                  `,
+                }}
+            />
         </>
     );
 }

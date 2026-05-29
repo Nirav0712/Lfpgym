@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
 import {
   Check,
   ChevronRight,
@@ -8,15 +8,13 @@ import {
 } from "lucide-react";
 
 export default function CrossfitPage() {
-  const [activeProgram, setActiveProgram] = useState("Cross Fit");
-
   const programs = [
-    "Aerobics",
-    "Zumba",
-    "Abs",
-    "Cross Fit",
-    "Yoga",
-    "Kick Boxing",
+    { name: "Aerobics", href: "/aerobic" },
+    { name: "Zumba", href: "/zumba" },
+    { name: "Abs", href: "/abs" },
+    { name: "Cross Fit", href: "/crossfit" },
+    { name: "Yoga", href: "/yoga" },
+    { name: "Kick Boxing", href: "/kick-boxing" },
   ];
 
   const highlights = [
@@ -98,19 +96,22 @@ export default function CrossfitPage() {
         <div className="grid lg:grid-cols-[220px_1fr] gap-12">
           {/* LEFT MENU */}
           <div className="space-y-3">
-            {programs.map((item) => (
-              <button
-                key={item}
-                onClick={() => setActiveProgram(item)}
-                className={`w-full text-left px-5 py-4 font-semibold text-sm transition-all duration-300
-                  ${activeProgram === item
-                    ? "bg-zinc-700 text-white"
-                    : "bg-zinc-800 hover:bg-zinc-700"
+            {programs.map((item) => {
+              const isActive = item.name === "Cross Fit";
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`block w-full text-left px-5 py-4 font-semibold text-sm transition-all duration-300 ${
+                    isActive
+                      ? "bg-[#F5E609] text-black"
+                      : "bg-zinc-800 hover:bg-[#F5E609] hover:text-black text-white"
                   }`}
-              >
-                {item}
-              </button>
-            ))}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* RIGHT CONTENT */}
@@ -121,8 +122,8 @@ export default function CrossfitPage() {
               className="w-full max-w-[850px] h-auto object-cover"
             />
 
-            <h2 className="text-6xl font-bold mt-10 lowercase">
-              {activeProgram}
+            <h2 className="text-6xl font-bold mt-10 uppercase tracking-tight">
+              CrossFit
             </h2>
 
             <p className="text-gray-300 leading-9 mt-6 max-w-5xl">
@@ -149,7 +150,7 @@ export default function CrossfitPage() {
                     key={index}
                     className="flex gap-6"
                   >
-                    <div className="w-16 h-16 border border-yellow-400 flex items-center justify-center flex-shrink-0">
+                    <div className="w-16 h-16 border border-[#F5E609] flex items-center justify-center flex-shrink-0">
                       <Check
                         size={30}
                         className="text-white"
@@ -190,7 +191,7 @@ export default function CrossfitPage() {
                       {item.date}
                     </p>
 
-                    <div className="flex items-center gap-1 mt-5 text-yellow-400">
+                    <div className="flex items-center gap-1 mt-5 text-[#F5E609]">
                       <Star size={16} fill="currentColor" />
                       <Star size={16} fill="currentColor" />
                       <Star size={16} fill="currentColor" />
@@ -210,7 +211,7 @@ export default function CrossfitPage() {
 
               {/* Dots */}
               <div className="flex justify-center gap-3 mt-10">
-                <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
+                <div className="w-2 h-2 rounded-full bg-[#F5E609]"></div>
                 <div className="w-2 h-2 rounded-full bg-zinc-600"></div>
                 <div className="w-2 h-2 rounded-full bg-zinc-600"></div>
               </div>
@@ -218,7 +219,7 @@ export default function CrossfitPage() {
           </div>
         </div>
 
-        <section className="bg-black overflow-hidden py-8">
+        <section className="bg-black overflow-hidden py-8 mt-24">
           <div className="flex w-max animate-marquee">
             {[...Array(6)].map((_, index) => (
               <h2
@@ -230,20 +231,23 @@ export default function CrossfitPage() {
             ))}
           </div>
 
-          <style jsx>{`
-    .animate-marquee {
-      animation: marquee 50s linear infinite;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-  `}</style>
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `
+                .animate-marquee {
+                  animation: marquee 50s linear infinite;
+                }
+                @keyframes marquee {
+                  0% {
+                    transform: translateX(0%);
+                  }
+                  100% {
+                    transform: translateX(-50%);
+                  }
+                }
+              `,
+            }}
+          />
         </section>
 
       </section>

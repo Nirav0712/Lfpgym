@@ -7,7 +7,7 @@ const plans = [
   {
     title: "1 Months Plan",
     subtitle: "Perfect for Starters",
-    price: "4000",
+    price: "5000",
     duration: "/1 months",
     benefits: [
       "Unlimited gym access & equipment use.",
@@ -43,12 +43,25 @@ const plans = [
       "25% off on personal training sessions.",
     ],
   },
+  {
+    title: "12 Months Plan",
+    subtitle: "Best Value Package",
+    price: "20000",
+    duration: "/12 month",
+    benefits: [
+      "Unlimited gym access & equipment use.",
+      "Access to all group fitness classes.",
+      "Free locker & shower usage.",
+      "Monthly body composition tracking.",
+      "25% off on personal training sessions.",
+    ],
+  },
 ];
 
 export default function PricingPlans() {
   return (
     <section className="bg-black py-24">
-      <div className="max-w-7xl mx-auto px-5">
+      <div className="max-w-screen-2xl mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-20">
           <h2 className="text-white text-5xl md:text-7xl font-bold mb-4">
@@ -62,54 +75,56 @@ export default function PricingPlans() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className="relative bg-[#050505] overflow-hidden group"
+              className="relative bg-[#050505] overflow-hidden group flex flex-col h-full border border-zinc-900 transition-all duration-300 hover:border-[#F5E609]"
             >
               {/* Yellow Glow */}
               <div className="absolute bottom-0 left-0 w-full h-40 bg-[#F5E609]/20 blur-3xl opacity-60"></div>
 
-              <div className="relative z-10 p-10">
-                <h3 className="text-white text-4xl font-bold">
-                  {plan.title}
-                </h3>
+              <div className="relative z-10 p-10 flex flex-col justify-between h-full flex-grow">
+                <div>
+                  <h3 className="text-white text-4xl font-bold">
+                    {plan.title}
+                  </h3>
 
-                <p className="text-gray-300 mt-2 text-lg">
-                  {plan.subtitle}
-                </p>
+                  <p className="text-gray-300 mt-2 text-lg">
+                    {plan.subtitle}
+                  </p>
 
-                <div className="mt-10 flex items-end gap-2">
-                  <span className="text-[#F5E609] text-6xl font-bold">
-                    {plan.price}
-                  </span>
+                  <div className="mt-10 flex items-end gap-2">
+                    <span className="text-[#F5E609] text-6xl font-bold">
+                      {plan.price}
+                    </span>
 
-                  <span className="text-[#F5E609] text-xl font-semibold mb-2">
-                    {plan.duration}
-                  </span>
+                    <span className="text-[#F5E609] text-xl font-semibold mb-2">
+                      {plan.duration}
+                    </span>
+                  </div>
+
+                  <div className="mt-12">
+                    <h4 className="text-white text-xl font-bold mb-6">
+                      Benefits:
+                    </h4>
+
+                    <ul className="space-y-4">
+                      {plan.benefits.map((benefit, i) => (
+                        <li
+                          key={i}
+                          className="flex items-start text-gray-300 text-lg"
+                        >
+                          <span className="text-[#F5E609] mr-3">✓</span>
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
-                <div className="mt-12">
-                  <h4 className="text-white text-xl font-bold mb-6">
-                    Benefits:
-                  </h4>
-
-                  <ul className="space-y-4">
-                    {plan.benefits.map((benefit, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start text-gray-300 text-lg"
-                      >
-                        <span className="text-[#F5E609] mr-3">✓</span>
-                        {benefit}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <Link 
-                  href="/joinnow" 
+                <Link
+                  href="/joinnow"
                   className="mt-10 w-full border border-[#F5E609] py-4 text-white font-bold uppercase tracking-wide transition-all duration-300 hover:bg-[#F5E609] hover:text-black block text-center"
                 >
                   Join Now
@@ -239,7 +254,7 @@ export default function PricingPlans() {
           </div>
 
         </div>
-        <section className="bg-black overflow-hidden py-8">
+        <section className="bg-black overflow-hidden py-8 mt-24">
           <div className="flex w-max animate-marquee">
             {[...Array(6)].map((_, index) => (
               <h2

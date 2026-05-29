@@ -4,12 +4,12 @@ import Link from "next/link";
 
 export default function ActivitiesPage() {
   const activities = [
-    { name: "Aerobics", href: "/activities/aerobics" },
-    { name: "Zumba", href: "/activities/zumba" },
-    { name: "Abs", href: "/activities/abs" },
-    { name: "Cross Fit", href: "/activities/crossfit" },
-    { name: "Yoga", href: "/activities/yoga" },
-    { name: "Kick Boxing", href: "/activities/kick-boxing" },
+    { name: "Aerobics", href: "/aerobic" },
+    { name: "Zumba", href: "/zumba" },
+    { name: "Abs", href: "/abs" },
+    { name: "Cross Fit", href: "/crossfit" },
+    { name: "Yoga", href: "/yoga" },
+    { name: "Kick Boxing", href: "/kick-boxing" },
   ];
 
   const highlights = [
@@ -61,15 +61,21 @@ export default function ActivitiesPage() {
         <div className="grid lg:grid-cols-[220px_1fr] gap-10">
           {/* Sidebar */}
           <div className="space-y-2">
-            {activities.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className="block bg-[#222] hover:bg-[#333] border border-[#444] px-4 py-3 text-sm font-medium transition-all duration-300"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {activities.map((item, index) => {
+              const isActive = item.name === "Aerobics";
+              return (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className={`block px-4 py-3 text-sm font-medium transition-all duration-300 border ${isActive
+                    ? "bg-[#F5E609] text-black border-[#F5E609]"
+                    : "bg-[#222] text-white hover:bg-[#F5E609] hover:text-black hover:border-[#F5E609] border-[#444]"
+                    }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Main Content */}
@@ -97,7 +103,7 @@ export default function ActivitiesPage() {
             <div className="grid md:grid-cols-2 gap-8">
               {highlights.map((item, index) => (
                 <div key={index} className="flex gap-4">
-                  <div className="min-w-[50px] h-[50px] border border-yellow-400 flex items-center justify-center text-yellow-400 text-xl font-bold">
+                  <div className="min-w-[50px] h-[50px] border border-[#F5E609] flex items-center justify-center text-[#F5E609] text-xl font-bold">
                     ✓
                   </div>
 
@@ -122,7 +128,7 @@ export default function ActivitiesPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-[#1d1d1d] p-6 border border-[#333]">
                 <h4 className="font-bold mb-2">Rahul Mehta</h4>
-                <p className="text-yellow-400 mb-3">★★★★★</p>
+                <p className="text-[#F5E609] mb-3">★★★★★</p>
                 <p className="text-gray-400 text-sm leading-6">
                   The Aerobics program helped me improve my stamina,
                   lose weight, and stay motivated throughout my fitness
@@ -132,7 +138,7 @@ export default function ActivitiesPage() {
 
               <div className="bg-[#1d1d1d] p-6 border border-[#333]">
                 <h4 className="font-bold mb-2">Neha Patel</h4>
-                <p className="text-yellow-400 mb-3">★★★★★</p>
+                <p className="text-[#F5E609] mb-3">★★★★★</p>
                 <p className="text-gray-400 text-sm leading-6">
                   Excellent trainers and a supportive atmosphere.
                   Every session is energetic and productive.
@@ -142,6 +148,33 @@ export default function ActivitiesPage() {
           </div>
         </div>
       </div>
+      <section className="bg-black overflow-hidden py-8 mt-24">
+        <div className="flex w-max animate-marquee">
+          {[...Array(6)].map((_, index) => (
+            <h2
+              key={index}
+              className="mx-16 text-4xl md:text-7xl font-bold text-[#F5E609] whitespace-nowrap"
+            >
+              Ready to take the first step towards your fitness goals?
+            </h2>
+          ))}
+        </div>
+
+        <style jsx>{`
+    .animate-marquee {
+      animation: marquee 50s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  `}</style>
+      </section>
     </div>
   );
 }

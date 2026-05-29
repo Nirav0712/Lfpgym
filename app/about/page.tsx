@@ -9,7 +9,7 @@ export default function AboutSection() {
       {/* Hero Banner */}
       <div className="relative h-[420px] overflow-hidden">
         <Image
-          src="/about-banner.jpg"
+          src="/Done.png"
           alt="About Banner"
           fill
           className="object-cover"
@@ -193,7 +193,7 @@ export default function AboutSection() {
 
             </div>
           </div>
-          <section className="bg-black overflow-hidden py-8">
+          <section className="bg-black overflow-hidden py-8 mt-24">
             <div className="flex w-max animate-marquee">
               {[...Array(6)].map((_, index) => (
                 <h2

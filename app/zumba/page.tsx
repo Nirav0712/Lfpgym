@@ -1,6 +1,17 @@
 "use client";
 
+import Link from "next/link";
+
 export default function ZumbaPage() {
+  const activities = [
+    { name: "Aerobics", href: "/aerobic" },
+    { name: "Zumba", href: "/zumba" },
+    { name: "Abs", href: "/abs" },
+    { name: "Cross Fit", href: "/crossfit" },
+    { name: "Yoga", href: "/yoga" },
+    { name: "Kick Boxing", href: "/kick-boxing" },
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Banner */}
@@ -31,29 +42,22 @@ export default function ZumbaPage() {
         <div className="grid gap-10 lg:grid-cols-[180px_1fr]">
           {/* Left Menu */}
           <div className="space-y-2">
-            <button className="w-full bg-zinc-800 px-4 py-3 text-left text-sm font-semibold hover:bg-zinc-700">
-              Aerobics
-            </button>
-
-            <button className="w-full bg-zinc-700 px-4 py-3 text-left text-sm font-semibold">
-              Zumba
-            </button>
-
-            <button className="w-full bg-zinc-800 px-4 py-3 text-left text-sm font-semibold hover:bg-zinc-700">
-              Abs
-            </button>
-
-            <button className="w-full bg-zinc-800 px-4 py-3 text-left text-sm font-semibold hover:bg-zinc-700">
-              Cross Fit
-            </button>
-
-            <button className="w-full bg-zinc-800 px-4 py-3 text-left text-sm font-semibold hover:bg-zinc-700">
-              Yoga
-            </button>
-
-            <button className="w-full bg-zinc-800 px-4 py-3 text-left text-sm font-semibold hover:bg-zinc-700">
-              Kick Boxing
-            </button>
+            {activities.map((item) => {
+              const isActive = item.name === "Zumba";
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`block w-full px-4 py-3 text-left text-sm font-semibold transition-colors duration-200 ${
+                    isActive
+                      ? "bg-[#F5E609] text-black"
+                      : "bg-zinc-800 hover:bg-[#F5E609] hover:text-black text-white"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Content */}
@@ -85,7 +89,7 @@ export default function ZumbaPage() {
             <div className="grid gap-y-16 gap-x-12 md:grid-cols-2">
               {/* Item 1 */}
               <div className="flex gap-6">
-                <div className="flex h-16 w-16 items-center justify-center border border-yellow-400">
+                <div className="flex h-16 w-16 items-center justify-center border border-[#F5E609]">
                   <span className="text-4xl font-light">✓</span>
                 </div>
 
@@ -104,7 +108,7 @@ export default function ZumbaPage() {
 
               {/* Item 2 */}
               <div className="flex gap-6">
-                <div className="flex h-16 w-16 items-center justify-center border border-yellow-400">
+                <div className="flex h-16 w-16 items-center justify-center border border-[#F5E609]">
                   <span className="text-4xl font-light">✓</span>
                 </div>
 
@@ -123,7 +127,7 @@ export default function ZumbaPage() {
 
               {/* Item 3 */}
               <div className="flex gap-6">
-                <div className="flex h-16 w-16 items-center justify-center border border-yellow-400">
+                <div className="flex h-16 w-16 items-center justify-center border border-[#F5E609]">
                   <span className="text-4xl font-light">✓</span>
                 </div>
 
@@ -142,7 +146,7 @@ export default function ZumbaPage() {
 
               {/* Item 4 */}
               <div className="flex gap-6">
-                <div className="flex h-16 w-16 items-center justify-center border border-yellow-400">
+                <div className="flex h-16 w-16 items-center justify-center border border-[#F5E609]">
                   <span className="text-4xl font-light">✓</span>
                 </div>
 
@@ -161,7 +165,7 @@ export default function ZumbaPage() {
 
               {/* Item 5 */}
               <div className="flex gap-6">
-                <div className="flex h-16 w-16 items-center justify-center border border-yellow-400">
+                <div className="flex h-16 w-16 items-center justify-center border border-[#F5E609]">
                   <span className="text-4xl font-light">✓</span>
                 </div>
 
@@ -180,7 +184,7 @@ export default function ZumbaPage() {
 
               {/* Item 6 */}
               <div className="flex gap-6">
-                <div className="flex h-16 w-16 items-center justify-center border border-yellow-400">
+                <div className="flex h-16 w-16 items-center justify-center border border-[#F5E609]">
                   <span className="text-4xl font-light">✓</span>
                 </div>
 
@@ -215,7 +219,7 @@ export default function ZumbaPage() {
                 </p>
 
                 <div className="mt-6 flex items-center gap-1">
-                  <span className="text-yellow-400">★★★★★</span>
+                  <span className="text-[#F5E609]">★★★★★</span>
                   <span className="ml-2 font-medium">5.0</span>
                 </div>
 
@@ -237,7 +241,7 @@ export default function ZumbaPage() {
                 </p>
 
                 <div className="mt-6 flex items-center gap-1">
-                  <span className="text-yellow-400">★★★★★</span>
+                  <span className="text-[#F5E609]">★★★★★</span>
                   <span className="ml-2 font-medium">5.0</span>
                 </div>
 
@@ -253,13 +257,13 @@ export default function ZumbaPage() {
 
             {/* Dots */}
             <div className="mt-8 flex justify-center gap-3">
-              <div className="h-2 w-2 rounded-full bg-yellow-400"></div>
+              <div className="h-2 w-2 rounded-full bg-[#F5E609]"></div>
               <div className="h-2 w-2 rounded-full bg-zinc-600"></div>
               <div className="h-2 w-2 rounded-full bg-zinc-600"></div>
             </div>
           </div>
         </section>
-        <section className="bg-black overflow-hidden py-8">
+        <section className="bg-black overflow-hidden py-8 mt-24">
           <div className="flex w-max animate-marquee">
             {[...Array(6)].map((_, index) => (
               <h2

@@ -50,12 +50,12 @@ function ChevronRightIcon(props: React.SVGProps<SVGSVGElement>) {
 const activities = [
     {
         title: "Aerobics",
-        image: "/activities/aerobics.jpg",
+        image: "/whychoose1.jpg",
         desc: "Improve stamina and overall fitness with aerobics training.",
     },
     {
         title: "Yoga",
-        image: "/activities/yoga.jpg",
+        image: "/whychus.jpg",
         desc: "Enhance flexibility, balance, and mental wellness.",
     },
     {

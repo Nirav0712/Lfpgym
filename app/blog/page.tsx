@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const blogs = [
   {
-    image: "/blog/blog1.jpg",
+    image: "/whychoose1.jpg",
     category: "Best Gym In Shahibaug",
     title: "Complete Fitness Strategy to Transform Your Body Faster",
     date: "12",
@@ -112,7 +112,7 @@ export default function BlogGrid() {
           ))}
         </div>
       </div>
-      <section className="bg-black overflow-hidden py-8">
+      <section className="bg-black overflow-hidden py-8 mt-24">
         <div className="flex w-max animate-marquee">
           {[...Array(6)].map((_, index) => (
             <h2
@@ -123,21 +123,23 @@ export default function BlogGrid() {
             </h2>
           ))}
         </div>
-
-        <style jsx>{`
-    .animate-marquee {
-      animation: marquee 50s linear infinite;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-  `}</style>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              .animate-marquee {
+                animation: marquee 50s linear infinite;
+              }
+              @keyframes marquee {
+                0% {
+                  transform: translateX(0%);
+                }
+                100% {
+                  transform: translateX(-50%);
+                }
+              }
+            `,
+          }}
+        />
       </section>
     </section>
   );
