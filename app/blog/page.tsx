@@ -12,7 +12,7 @@ const blogs = [
     link: "/blog/fitness-strategy",
   },
   {
-    image: "/blog/blog2.jpg",
+    image: "/whychoose1.jpg",
     category: "Weight Loss & Muscle Gain Plan",
     title: "Expert Training System at the Best Gym in Shahibaug",
     date: "10",
@@ -20,7 +20,7 @@ const blogs = [
     link: "/blog/weight-loss-plan",
   },
   {
-    image: "/blog/blog3.jpg",
+    image: "/whychoose1.jpg",
     category: "Motivation",
     title: "How to Stay Consistent at the Gym Even When You Feel Unmotivated",
     date: "08",
@@ -28,7 +28,7 @@ const blogs = [
     link: "/blog/motivation",
   },
   {
-    image: "/blog/blog4.jpg",
+    image: "/whychoose1.jpg",
     category: "Strength",
     title: "Top 7 Compound Exercises for Building Full-Body Power",
     date: "28",
@@ -36,7 +36,7 @@ const blogs = [
     link: "/blog/strength-training",
   },
   {
-    image: "/blog/blog5.jpg",
+    image: "/whychoose1.jpg",
     category: "Recovery",
     title: "Why Rest Days Are Crucial for Muscle Growth and Performance",
     date: "22",
@@ -44,7 +44,7 @@ const blogs = [
     link: "/blog/recovery",
   },
   {
-    image: "/blog/blog6.jpg",
+    image: "/whychoose1.jpg",
     category: "Lifestyle",
     title: "Balancing Gym, Work, and Life: How to Build a Sustainable Routine",
     date: "18",

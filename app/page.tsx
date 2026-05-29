@@ -10,10 +10,11 @@ import GymSchedule from "@/components/Gymschedule";
 import Testimonial from "@/components/Testimonial";
 import GymFAQ from "@/components/Gymfaq";
 import Slider from "@/components/Slider";
+import HeroSection from "@/components/Main";
 export default function Home() {
   return (
     <>
-      <Hero />
+      <HeroSection />
       <About />
       <PricingPlans />
       <WhyChooseUs />
@@ -22,6 +23,7 @@ export default function Home() {
       <Testimonial />
       <GymFAQ />
       <Slider />
+
     </>
   );
 }

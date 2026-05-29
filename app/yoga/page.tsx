@@ -69,11 +69,10 @@ export default function YogaPage() {
                 <Link
                   key={program.name}
                   href={program.href}
-                  className={`block w-full transition-all duration-300 text-left px-5 py-5 font-semibold ${
-                    isActive
+                  className={`block w-full transition-all duration-300 text-left px-5 py-5 font-semibold ${isActive
                       ? "bg-[#F5E609] text-black"
                       : "bg-[#2d2d2d] text-white hover:bg-[#F5E609] hover:text-black"
-                  }`}
+                    }`}
                 >
                   {program.name}
                 </Link>

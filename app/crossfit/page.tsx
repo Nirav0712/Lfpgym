@@ -102,11 +102,10 @@ export default function CrossfitPage() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`block w-full text-left px-5 py-4 font-semibold text-sm transition-all duration-300 ${
-                    isActive
+                  className={`block w-full text-left px-5 py-4 font-semibold text-sm transition-all duration-300 ${isActive
                       ? "bg-[#F5E609] text-black"
                       : "bg-zinc-800 hover:bg-[#F5E609] hover:text-black text-white"
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>

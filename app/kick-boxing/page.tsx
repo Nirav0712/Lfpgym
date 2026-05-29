@@ -66,11 +66,10 @@ export default function KickBoxingPage() {
                 <Link
                   key={activity.name}
                   href={activity.href}
-                  className={`block w-full text-left px-5 py-5 font-semibold transition-all duration-300 ${
-                    isActive
+                  className={`block w-full text-left px-5 py-5 font-semibold transition-all duration-300 ${isActive
                       ? "bg-[#F5E609] text-black"
                       : "bg-[#333333] text-white hover:bg-[#F5E609] hover:text-black"
-                  }`}
+                    }`}
                 >
                   {activity.name}
                 </Link>

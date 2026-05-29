@@ -48,11 +48,10 @@ export default function ZumbaPage() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`block w-full px-4 py-3 text-left text-sm font-semibold transition-colors duration-200 ${
-                    isActive
+                  className={`block w-full px-4 py-3 text-left text-sm font-semibold transition-colors duration-200 ${isActive
                       ? "bg-[#F5E609] text-black"
                       : "bg-zinc-800 hover:bg-[#F5E609] hover:text-black text-white"
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>

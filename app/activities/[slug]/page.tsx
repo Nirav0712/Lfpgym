@@ -106,7 +106,7 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
-  
+
   // Normalize slug to match keys (e.g. crossfit -> cross-fit)
   let normalizedSlug = slug.toLowerCase();
   if (normalizedSlug === "crossfit") normalizedSlug = "cross-fit";
@@ -119,24 +119,24 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <div className="flex-1 bg-black text-white px-8 sm:px-12 py-16 relative overflow-hidden flex items-center">
-      
+
       {/* Premium ambient glows */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-yellow-500/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] bg-zinc-900/40 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-[1440px] mx-auto w-full relative z-10">
-        
+
         {/* Back Link */}
-        <Link 
-          href="/" 
+        <Link
+          href="/"
           className="inline-flex items-center gap-3 text-zinc-400 hover:text-yellow-400 font-bold uppercase tracking-widest text-sm mb-12 transition-colors group"
         >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            fill="none" 
-            viewBox="0 0 24 24" 
-            strokeWidth={2.5} 
-            stroke="currentColor" 
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2.5}
+            stroke="currentColor"
             className="w-5 h-5 transition-transform group-hover:-translate-x-1"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
@@ -145,7 +145,7 @@ export default async function Page({ params }: PageProps) {
         </Link>
 
         <div className="grid lg:grid-cols-12 gap-16 items-start">
-          
+
           {/* Left Details Grid */}
           <div className="lg:col-span-7 space-y-10">
             <div>

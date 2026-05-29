@@ -64,11 +64,10 @@ export default function ProgramPage() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`block w-full text-left px-6 py-5 font-semibold transition-all duration-300 ${
-                    isActive
+                  className={`block w-full text-left px-6 py-5 font-semibold transition-all duration-300 ${isActive
                       ? "bg-[#F5E609] text-black"
                       : "text-white bg-gradient-to-r from-[#2c2c2c] to-[#3a3a3a] hover:bg-[#F5E609] hover:text-black"
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>
