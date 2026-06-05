@@ -47,7 +47,7 @@ export default function AboutSection() {
                         {/* Female Image */}
                         <div className="overflow-hidden rounded-2xl border border-zinc-800">
                             <Image
-                                src="/female-gym.jpg"
+                                src="/images (1).jpg"
                                 alt="Female Workout"
                                 width={500}
                                 height={600}
@@ -80,7 +80,7 @@ export default function AboutSection() {
                         {/* Male Image */}
                         <div className="overflow-hidden rounded-2xl border border-zinc-800">
                             <Image
-                                src="/male-gym.jpg"
+                                src="/download.jpg"
                                 alt="Male Workout"
                                 width={500}
                                 height={600}
